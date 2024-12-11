@@ -1815,9 +1815,13 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>.\User\main.c</Name>
+<<<<<<< HEAD
         <ColumnNumber>10</ColumnNumber>
+=======
+        <ColumnNumber>0</ColumnNumber>
+>>>>>>> dca93799bf871a77c19539f7262976252eac936e
         <TopLine>1</TopLine>
-        <CurrentLine>6</CurrentLine>
+        <CurrentLine>8</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
