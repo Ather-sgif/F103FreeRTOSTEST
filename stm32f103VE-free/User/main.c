@@ -3,5 +3,5 @@
 #include "task.h"
  int  main(void)
 {
-	while(2) ;
+	while(11) ;
 }

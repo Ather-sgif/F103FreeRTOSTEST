@@ -1,7 +1,7 @@
 .\objects\port.o: FreeRTOS\port\port.c
 .\objects\port.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\port.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\port.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\port.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\port.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\port.o: .\User\FreeRTOSConfig.h
 .\objects\port.o: .\Start\stm32f10x.h
 .\objects\port.o: .\Start\core_cm3.h
