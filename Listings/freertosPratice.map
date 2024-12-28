@@ -5131,7 +5131,7 @@ Image Symbol Table
     vRecordOSRunTime                         0x08001695   Thumb Code    44  systemtime.o(i.vRecordOSRunTime)
     vSystemHardwareDriverInit                0x080016c9   Thumb Code    14  hardwaremanage.o(i.vSystemHardwareDriverInit)
     vSystemHardwareWorkTask                  0x080016d7   Thumb Code    16  taskmanage.o(i.vSystemHardwareWorkTask)
-    vTIMEncoderCheckOperation                0x080016e9   Thumb Code    30  application_timencoder.o(i.vTIMEncoderCheckOperation)
+    vTIMEncoderCheckOperation                0x080016e9   Thumb Code    32  application_timencoder.o(i.vTIMEncoderCheckOperation)
     vTaskCreateFunction                      0x0800170d   Thumb Code    46  taskmanage.o(i.vTaskCreateFunction)
     vTaskDelay                               0x08001765   Thumb Code    48  tasks.o(i.vTaskDelay)
     vTaskStartScheduler                      0x08001799   Thumb Code    64  tasks.o(i.vTaskStartScheduler)
@@ -5359,7 +5359,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       440         34          0          8         12       2988   application_timencoder.o
+       440         32          0          8         12       2996   application_timencoder.o
        128         10          0          4        148     163897   applocation_ui.o
          0          0          0          0          0       4540   core_cm3.o
         14          0          0          0          0        468   hardwaremanage.o
@@ -5388,7 +5388,7 @@ Image component sizes
         46          0          0          0          0       1382   u8x8_display.o
 
     ----------------------------------------------------------------------
-      6246        528        336        112      33168     656934   Object Totals
+      6246        526        336        112      33168     656942   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         20          0          0          3          0          0   (incl. Padding)
 
@@ -5439,9 +5439,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6668        544        336        112      33264     652774   Grand Totals
-      6668        544        336        112      33264     652774   ELF Image Totals
-      6668        544        336        112          0          0   ROM Totals
+      6668        542        336        112      33264     652782   Grand Totals
+      6668        542        336        112      33264     652782   ELF Image Totals
+      6668        542        336        112          0          0   ROM Totals
 
 ==============================================================================
 

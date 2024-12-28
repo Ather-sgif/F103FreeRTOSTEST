@@ -31,7 +31,7 @@ void vTIMEncoderCheckOperation(void)
 	   TIMEncoderState = TIMEncoderStateKey;
 		 
 	 }
-	if(TIMEncoderRotateState != TIMEncoderUp)
+	else if(TIMEncoderRotateState != TIMEncoderUp)
 	{
        TIMEncoderState =  TIMEncoderRotateState;       
 	}
