@@ -1,8 +1,8 @@
 .\objects\systemtime.o: System\SystemTime.c
 .\objects\systemtime.o: System\SystemTime.h
 .\objects\systemtime.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\systemtime.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\systemtime.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\systemtime.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\systemtime.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\systemtime.o: .\User\FreeRTOSConfig.h
 .\objects\systemtime.o: .\Start\stm32f10x.h
 .\objects\systemtime.o: .\Start\core_cm3.h
@@ -37,4 +37,4 @@
 .\objects\systemtime.o: .\FreeRTOS\include\deprecated_definitions.h
 .\objects\systemtime.o: .\FreeRTOS\include\portmacro.h
 .\objects\systemtime.o: .\FreeRTOS\include\mpu_wrappers.h
-.\objects\systemtime.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\systemtime.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdbool.h

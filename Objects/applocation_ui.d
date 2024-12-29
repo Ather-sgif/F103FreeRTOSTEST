@@ -2,10 +2,10 @@
 .\objects\applocation_ui.o: .\Hardware\I2C.h
 .\objects\applocation_ui.o: .\U8g2\u8g2.h
 .\objects\applocation_ui.o: .\U8g2\u8x8.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdarg.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\limits.h
 .\objects\applocation_ui.o: .\Start\stm32f10x.h
 .\objects\applocation_ui.o: .\Start\core_cm3.h
 .\objects\applocation_ui.o: .\Start\system_stm32f10x.h
@@ -37,7 +37,7 @@
 .\objects\applocation_ui.o: .\System\Delay.h
 .\objects\applocation_ui.o: .\U8g2\mui_u8g2.h
 .\objects\applocation_ui.o: .\U8g2\mui.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\string.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\string.h
 .\objects\applocation_ui.o: .\Hardware\TIMEncoder.h
 .\objects\applocation_ui.o: .\Application\F103VE\inc\Application_TIMEncoder.h
 .\objects\applocation_ui.o: .\System\SystemTime.h
@@ -48,5 +48,5 @@
 .\objects\applocation_ui.o: .\FreeRTOS\include\deprecated_definitions.h
 .\objects\applocation_ui.o: .\FreeRTOS\include\portmacro.h
 .\objects\applocation_ui.o: .\FreeRTOS\include\mpu_wrappers.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\applocation_ui.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\applocation_ui.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdlib.h

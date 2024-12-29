@@ -64,7 +64,7 @@ do
 
 if(eTIMEncoderExternState() == TIMEncoderSingleDown)
 	  i++;
-if(eTIMEncoderExternState() == TIMEncoderSingleDown)
+if(eTIMEncoderExternState() == TIMEncoderDoubleDown)
       i--;
 if(eTIMEncoderExternState() == TIMEncoderTurnRight)
 	  i++;
@@ -76,7 +76,5 @@ u8g2_SendBuffer(&u8g2);
 }
 void OLED_UI_Init(void)
 {
-	TIM_Encoder_Init();
-	OLED_I2C_Init();
 	u8g2Init(&u8g2);
 }
