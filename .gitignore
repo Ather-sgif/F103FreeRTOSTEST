@@ -21,5 +21,7 @@ stm32f103VE-free.code-workspace
 .eide/
 .pack/
 RTE_Components.h
+F103FreeRTOSTEST.code-workspace
+
 
 
