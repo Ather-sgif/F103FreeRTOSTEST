@@ -31,3 +31,4 @@
 .\objects\hardwaremanage.o: .\Library\inc\stm32f10x_usart.h
 .\objects\hardwaremanage.o: .\Library\inc\stm32f10x_wwdg.h
 .\objects\hardwaremanage.o: .\Library\inc\misc.h
+.\objects\hardwaremanage.o: .\Application\F103VE\inc\Applocation_UI.h

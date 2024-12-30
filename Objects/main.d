@@ -41,8 +41,8 @@
 .\objects\main.o: .\Hardware\HardwareManage.h
 .\objects\main.o: .\Hardware\I2C.h
 .\objects\main.o: .\Hardware\TIMEncoder.h
-.\objects\main.o: .\Application\F103VE\inc\TaskManage.h
 .\objects\main.o: .\Application\F103VE\inc\Applocation_UI.h
+.\objects\main.o: .\Application\F103VE\inc\TaskManage.h
 .\objects\main.o: .\Application\F103VE\inc\Application_TIMEncoder.h
 .\objects\main.o: .\System\SystemTime.h
 .\objects\main.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdbool.h

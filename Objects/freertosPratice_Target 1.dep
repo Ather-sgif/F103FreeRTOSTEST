@@ -1377,7 +1377,7 @@ I (.\FreeRTOS\include\task.h)(0x67716189)
 I (.\FreeRTOS\include\list.h)(0x67716189)
 I (.\FreeRTOS\include\queue.h)(0x67716189)
 I (.\FreeRTOS\include\timers.h)(0x67716189)
-F (.\User\main.c)(0x6771618A)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x6772925A)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Start\stm32f10x.h)(0x67716189)
 I (.\Start\core_cm3.h)(0x67716189)
 I (F:\keil c51\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -1416,11 +1416,11 @@ I (.\FreeRTOS\include\portmacro.h)(0x67716189)
 I (.\FreeRTOS\include\mpu_wrappers.h)(0x67716189)
 I (.\FreeRTOS\include\task.h)(0x67716189)
 I (.\FreeRTOS\include\list.h)(0x67716189)
-I (.\Hardware\HardwareManage.h)(0x67716189)
+I (.\Hardware\HardwareManage.h)(0x6772925A)
 I (.\Hardware\I2C.h)(0x67716189)
 I (.\Hardware\TIMEncoder.h)(0x67716189)
+I (.\Application\F103VE\inc\Applocation_UI.h)(0x6772925A)
 I (.\Application\F103VE\inc\TaskManage.h)(0x67716189)
-I (.\Application\F103VE\inc\Applocation_UI.h)(0x67716189)
 I (.\Application\F103VE\inc\Application_TIMEncoder.h)(0x67716189)
 I (.\System\SystemTime.h)(0x67716189)
 I (F:\keil c51\ARM\ARMCC\include\stdbool.h)(0x588B8344)
@@ -1599,8 +1599,8 @@ I (.\Library\inc\stm32f10x_wwdg.h)(0x67716189)
 I (.\Library\inc\misc.h)(0x67716189)
 I (Hardware\TIMEncoder.h)(0x67716189)
 F (.\Hardware\TIMEncoder.h)(0x67716189)()
-F (.\Hardware\HardwareManage.c)(0x67716189)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\hardwaremanage.o --omf_browse .\objects\hardwaremanage.crf --depend .\objects\hardwaremanage.d)
-I (Hardware\HardwareManage.h)(0x67716189)
+F (.\Hardware\HardwareManage.c)(0x6772925A)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\hardwaremanage.o --omf_browse .\objects\hardwaremanage.crf --depend .\objects\hardwaremanage.d)
+I (Hardware\HardwareManage.h)(0x6772925A)
 I (Hardware\I2C.h)(0x67716189)
 I (Hardware\TIMEncoder.h)(0x67716189)
 I (.\Start\stm32f10x.h)(0x67716189)
@@ -1631,8 +1631,9 @@ I (.\Library\inc\stm32f10x_tim.h)(0x67716189)
 I (.\Library\inc\stm32f10x_usart.h)(0x67716189)
 I (.\Library\inc\stm32f10x_wwdg.h)(0x67716189)
 I (.\Library\inc\misc.h)(0x67716189)
-F (.\Hardware\HardwareManage.h)(0x67716189)()
-F (.\Application\F103VE\src\Applocation_UI.c)(0x67716189)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\applocation_ui.o --omf_browse .\objects\applocation_ui.crf --depend .\objects\applocation_ui.d)
+I (.\Application\F103VE\inc\Applocation_UI.h)(0x6772925A)
+F (.\Hardware\HardwareManage.h)(0x6772925A)()
+F (.\Application\F103VE\src\Applocation_UI.c)(0x677293B1)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\applocation_ui.o --omf_browse .\objects\applocation_ui.crf --depend .\objects\applocation_ui.d)
 I (.\Hardware\I2C.h)(0x67716189)
 I (.\U8g2\u8g2.h)(0x67716189)
 I (.\U8g2\u8x8.h)(0x6771618A)
@@ -1683,16 +1684,13 @@ I (.\FreeRTOS\include\portmacro.h)(0x67716189)
 I (.\FreeRTOS\include\mpu_wrappers.h)(0x67716189)
 I (F:\keil c51\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (F:\keil c51\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-F (.\Application\F103VE\inc\Applocation_UI.h)(0x67716189)()
-F (.\Application\F103VE\src\TaskManage.c)(0x67716189)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\taskmanage.o --omf_browse .\objects\taskmanage.crf --depend .\objects\taskmanage.d)
+F (.\Application\F103VE\inc\Applocation_UI.h)(0x6772925A)()
+F (.\Application\F103VE\src\TaskManage.c)(0x67717327)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\taskmanage.o --omf_browse .\objects\taskmanage.crf --depend .\objects\taskmanage.d)
 I (.\Application\F103VE\inc\Taskmanage.h)(0x67716189)
-I (.\Application\F103VE\inc\Applocation_UI.h)(0x67716189)
-I (.\FreeRTOS\include\FreeRTOS.h)(0x67716189)
-I (F:\keil c51\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (F:\keil c51\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (.\User\FreeRTOSConfig.h)(0x6771618A)
+I (.\Application\F103VE\inc\Applocation_UI.h)(0x6772925A)
 I (.\Start\stm32f10x.h)(0x67716189)
 I (.\Start\core_cm3.h)(0x67716189)
+I (F:\keil c51\ARM\ARMCC\include\stdint.h)(0x588B8344)
 I (.\Start\system_stm32f10x.h)(0x67716189)
 I (.\User\stm32f10x_conf.h)(0x6771618A)
 I (.\Library\inc\stm32f10x_adc.h)(0x67716189)
@@ -1718,6 +1716,9 @@ I (.\Library\inc\stm32f10x_tim.h)(0x67716189)
 I (.\Library\inc\stm32f10x_usart.h)(0x67716189)
 I (.\Library\inc\stm32f10x_wwdg.h)(0x67716189)
 I (.\Library\inc\misc.h)(0x67716189)
+I (.\FreeRTOS\include\FreeRTOS.h)(0x67716189)
+I (F:\keil c51\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (.\User\FreeRTOSConfig.h)(0x6771618A)
 I (.\FreeRTOS\include\projdefs.h)(0x67716189)
 I (.\FreeRTOS\include\portable.h)(0x67716189)
 I (.\FreeRTOS\include\deprecated_definitions.h)(0x67716189)
@@ -1731,7 +1732,7 @@ I (.\System\SystemTime.h)(0x67716189)
 I (F:\keil c51\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (F:\keil c51\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 F (.\Application\F103VE\inc\TaskManage.h)(0x67716189)()
-F (.\Application\F103VE\src\Application_TIMEncoder.c)(0x67716189)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\application_timencoder.o --omf_browse .\objects\application_timencoder.crf --depend .\objects\application_timencoder.d)
+F (.\Application\F103VE\src\Application_TIMEncoder.c)(0x67729C95)(--c99 -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Library\inc -I .\User -I .\FreeRTOS\include -I .\U8g2 -I .\Hardware -I .\System -I .\Application\F103VE\inc --diag_suppress=1-I.\RTE\_Target_1-I"F:\keil c51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-I"F:\keil c51\ARM\CMSIS\Include"-D__UVISION_VERSION="524" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\objects\application_timencoder.o --omf_browse .\objects\application_timencoder.crf --depend .\objects\application_timencoder.d)
 I (.\Application\F103VE\inc\Application_TIMEncoder.h)(0x67716189)
 I (.\Start\stm32f10x.h)(0x67716189)
 I (.\Start\core_cm3.h)(0x67716189)

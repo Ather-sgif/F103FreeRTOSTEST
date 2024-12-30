@@ -1,10 +1,10 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-28 10:04:40
- * @LastEditTime: 2024-12-30 16:24:55
- * @LastEditors: ZJP
+ * @LastEditTime: 2024-12-30 20:36:01
+ * @LastEditors: your name
  * @Description: ui显示函数
- * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
+ * @FilePath: \F103FreeRTOSTEST\F103FreeRTOSTEST\Application\F103VE\src\Applocation_UI.c
  * 
  */
 #include "I2C.h"
@@ -76,10 +76,10 @@ if(eTIMEncoderExternState() == TIMEncoderSingleDown)
 	  i++;
 if(eTIMEncoderExternState() == TIMEncoderDoubleDown)
       i--;
-if(eTIMEncoderExternState() == TIMEncoderTurnRight)
+if(eTIMEncoderExternState() == TIMEncoderTurnLeft)
 	  i++;
-if(eTIMEncoderExternState() ==TIMEncoderTurnLeft)
-      i--;
+if(eTIMEncoderExternState() ==TIMEncoderTurnRight)
+      i++;
 if(i>=64||i<=0)
 	 i = 0;
 u8g2_SendBuffer(&u8g2);

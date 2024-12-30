@@ -23,8 +23,8 @@
 #define TIMEncoder_TIM_Channel_A     TIM_Channel_1			       /* 编码器使用的A相通道 */
 #define TIMEncoder_TIM_Channel_B     TIM_Channel_2			       /* 编码器使用的B相通道 */
 
-#define TIMEncoder_TIM_ICFilter_A    0xF			       /* 编码器使用的A相通道滤波参数 */
-#define TIMEncoder_TIM_ICFilter_B    0xF			       /* 编码器使用的B相通道滤波参数 */
+#define TIMEncoder_TIM_ICFilter_A    0xf			       /* 编码器使用的A相通道滤波参数 */
+#define TIMEncoder_TIM_ICFilter_B    0xf			       /* 编码器使用的B相通道滤波参数 */
 
 
 #define TIMEncoder_TIM_EncoderMode    TIM_EncoderMode_TI12			       /* 配置编码器模式 */

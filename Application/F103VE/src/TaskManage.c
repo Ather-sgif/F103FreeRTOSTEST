@@ -38,6 +38,6 @@ void vSystemHardwareWorkTask(void *p)
 //        vUsart1Interactive();// 串口1发送处理函数
 //        vUsart2Interactive();// 串口2发送和接受处理函数
         UI_Test();
-        vTaskDelay(5);
+        vTaskDelay(10);
     }
 }
