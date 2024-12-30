@@ -10,7 +10,7 @@
 	  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);//设置系统中断优先级分组4	 
 
     vSystemHardwareDriverInit();//硬件初始化
-	OLED_UI_Init();
+
 	vTaskCreateFunction();//创建任务
     vTaskStartScheduler();//开启任务调度   
 

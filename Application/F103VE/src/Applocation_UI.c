@@ -1,3 +1,12 @@
+/*
+ * @Author: ZJP
+ * @Date: 2024-12-28 10:04:40
+ * @LastEditTime: 2024-12-30 16:24:55
+ * @LastEditors: ZJP
+ * @Description: ui显示函数
+ * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
+ * 
+ */
 #include "I2C.h"
 #include "u8g2.h"
 #include "stm32f10x.h"
@@ -52,6 +61,7 @@ void u8g2Init(u8g2_t *u8g2)
 	u8g2_SetPowerSave(u8g2, 0); // 打开显示器
 	u8g2_ClearBuffer(u8g2);
 }
+
 int i = 0;
 void UI_Test(void)
 {
@@ -74,6 +84,10 @@ if(i>=64||i<=0)
 	 i = 0;
 u8g2_SendBuffer(&u8g2);
 }
+/**
+ * @description: UI初始化
+ * @return {*}
+ */
 void OLED_UI_Init(void)
 {
 	u8g2Init(&u8g2);

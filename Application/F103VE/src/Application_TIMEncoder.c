@@ -1,7 +1,7 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-26 14:15:42
- * @LastEditTime: 2024-12-27 18:59:26
+ * @LastEditTime: 2024-12-30 16:09:25
  * @LastEditors: ZJP
  * @Description: 按键处理应用函数
  * @FilePath: \stm32f103VE-free\Application\F103VE\src\Application_TIMEncoder.c
@@ -134,6 +134,19 @@ eTIMEncoderState eTIMEncoder1State(void)
    }
    return TIMEncoderUp;
 }
+/**
+  * 函    数：获取编码器的增量值
+  * 参    数：无
+  * 返 回 值：自上此调用此函数后，编码器的增量值
+  */
+int16_t Encoder_Get(void)
+{
+	/*使用Temp变量作为中继，目的是返回CNT后将其清零*/
+	int16_t Temp;
+	Temp = TIM_GetCounter(TIM3);
+	TIM_SetCounter(TIM3, 0);
+	return Temp;
+}
 /*******************************************************************************
 * Function Name  : eTIMEncoderTurnState
 * Description    : 返回旋转的方向,以及触发多少次算一次
@@ -144,33 +157,41 @@ eTIMEncoderState eTIMEncoder1State(void)
 eTIMEncoderState eTIMEncoderTurnState(void)
 {
 	
-	static int  TIMEncoderRotate = 0; 
-	if(TIMEncoderRotate == 0)
-	   TIMEncoderRotate = TIM_GetCounter(TIM3);//获取编码器计数量
-       TIM_SetCounter(TIM3, 0);//获取编码器计数清零
+	// static int  TIMEncoderRotate = 0; 
+	// if(TIMEncoderRotate == 0)
+	//    TIMEncoderRotate = TIM_GetCounter(TIM3);//获取编码器计数量
+    //    TIM_SetCounter(TIM3, 0);//获取编码器计数清零
 
 
-	/*计数之后的处理*/ 
-	if(TIMEncoderRotate > 0) //编码器正数计算
-	{
-      TIMEncoderRotate -= TIMEncoderEnterTimes;//减少编码器计数值
-	  if(TIMEncoderRotate >= -(TIMEncoderEnterTimes-1) && TIMEncoderRotate <= (TIMEncoderEnterTimes-1)) //小于设置的触发次数，则清零
-	  {
-		TIMEncoderRotate = 0;
-		return TIMEncoderUp;
-	  }
-	  return TIMEncoderTurnRight;
-	}
-	else if(TIMEncoderRotate < 0)//编码器负数计算
-	{
-      TIMEncoderRotate += TIMEncoderEnterTimes;
-	  if(TIMEncoderRotate >= -(TIMEncoderEnterTimes-1) && TIMEncoderRotate <= (TIMEncoderEnterTimes-1)) 
-	  {
-		TIMEncoderRotate = 0;
-		return TIMEncoderUp;
-	  }
-	  return TIMEncoderTurnLeft;
-	}
+	// /*计数之后的处理*/ 
+	// if(TIMEncoderRotate > 0) //编码器正数计算
+	// {
+    //   TIMEncoderRotate -= TIMEncoderEnterTimes;//减少编码器计数值
+	//   if(TIMEncoderRotate >= -(TIMEncoderEnterTimes-1) && TIMEncoderRotate <= (TIMEncoderEnterTimes-1)) //小于设置的触发次数，则清零
+	//   {
+		// TIMEncoderRotate = 0;
+		// return TIMEncoderUp;
+	//   }
+	//   return TIMEncoderTurnRight;
+	// }
+	// else if(TIMEncoderRotate < 0)//编码器负数计算
+	// {
+    //   TIMEncoderRotate += TIMEncoderEnterTimes;
+	//   if(TIMEncoderRotate >= -(TIMEncoderEnterTimes-1) && TIMEncoderRotate <= (TIMEncoderEnterTimes-1)) 
+	//   {
+		// TIMEncoderRotate = 0;
+		// return TIMEncoderUp;
+	//   }
+	//   return TIMEncoderTurnLeft;
+	// }
+    if(Encoder_Get()>0)
+    {
+        return TIMEncoderTurnRight;
+    }
+    else if(Encoder_Get()<0)
+    {
+        return TIMEncoderTurnLeft;
+    }
 	return TIMEncoderUp;
  
 }

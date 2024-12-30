@@ -3,6 +3,7 @@
 
 #include "I2C.h"
 #include "TIMEncoder.h"
+#include "Applocation_UI.h"
 
 void vSystemHardwareDriverInit(void);
 
