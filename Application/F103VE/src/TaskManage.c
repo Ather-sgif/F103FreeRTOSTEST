@@ -37,7 +37,7 @@ void vSystemHardwareWorkTask(void *p)
 //        vLedStateDisplay();      //LED应用
 //        vUsart1Interactive();// 串口1发送处理函数
 //        vUsart2Interactive();// 串口2发送和接受处理函数
-        UI_Test();
+        UI_Display();
         vTaskDelay(10);
     }
 }
