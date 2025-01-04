@@ -1,8 +1,8 @@
 .\objects\list.o: FreeRTOS\src\list.c
-.\objects\list.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\list.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\list.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\list.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\list.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\list.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\list.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\list.o: .\User\FreeRTOSConfig.h
 .\objects\list.o: .\Start\stm32f10x.h
 .\objects\list.o: .\Start\core_cm3.h

@@ -1,7 +1,7 @@
 .\objects\timencoder.o: Hardware\TIMEncoder.c
 .\objects\timencoder.o: .\Start\stm32f10x.h
 .\objects\timencoder.o: .\Start\core_cm3.h
-.\objects\timencoder.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\timencoder.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\timencoder.o: .\Start\system_stm32f10x.h
 .\objects\timencoder.o: .\User\stm32f10x_conf.h
 .\objects\timencoder.o: .\Library\inc\stm32f10x_adc.h

@@ -2,7 +2,7 @@
 .\objects\application_timencoder.o: .\Application\F103VE\inc\Application_TIMEncoder.h
 .\objects\application_timencoder.o: .\Start\stm32f10x.h
 .\objects\application_timencoder.o: .\Start\core_cm3.h
-.\objects\application_timencoder.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\application_timencoder.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\application_timencoder.o: .\Start\system_stm32f10x.h
 .\objects\application_timencoder.o: .\User\stm32f10x_conf.h
 .\objects\application_timencoder.o: .\Library\inc\stm32f10x_adc.h
@@ -32,12 +32,12 @@
 .\objects\application_timencoder.o: .\Hardware\TIMEncoder.h
 .\objects\application_timencoder.o: .\System\SystemTime.h
 .\objects\application_timencoder.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\application_timencoder.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\application_timencoder.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\application_timencoder.o: .\User\FreeRTOSConfig.h
 .\objects\application_timencoder.o: .\FreeRTOS\include\projdefs.h
 .\objects\application_timencoder.o: .\FreeRTOS\include\portable.h
 .\objects\application_timencoder.o: .\FreeRTOS\include\deprecated_definitions.h
 .\objects\application_timencoder.o: .\FreeRTOS\include\portmacro.h
 .\objects\application_timencoder.o: .\FreeRTOS\include\mpu_wrappers.h
-.\objects\application_timencoder.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\application_timencoder.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\application_timencoder.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\application_timencoder.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdlib.h
