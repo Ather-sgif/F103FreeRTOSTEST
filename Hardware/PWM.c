@@ -1,7 +1,6 @@
-#include "stm32f10x.h"                  // Device header
 #include "PWM.h"
 
-void PWm_Init(void)
+void PWM_Init(void)
 {
 	/*开启时钟*/
 	RCC_APB1PeriphClockCmd(PWM_TIM_CLK, ENABLE);			//开启TIM2的时钟
@@ -36,7 +35,7 @@ void PWm_Init(void)
 	TIM_OCInitStructure.TIM_OCPolarity = PWM_TIM_OCPolarity;       //输出极性，选择为高，若选择极性为低，则输出高低电平取反
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;   //输出使能
 	TIM_OCInitStructure.TIM_Pulse = PWM_TIM_CRR;								//初始的CCR值
-	TIM_OC2Init(PWM_TIM, &TIM_OCInitStructure);                        //将结构体变量交给TIM_OC2Init，配置TIM2的输出比较通道2
+	TIM_OC3Init(PWM_TIM, &TIM_OCInitStructure);                        //将结构体变量交给TIM_OC2Init，配置TIM2的输出比较通道2
 	
 	/*TIM使能*/
 	TIM_Cmd(PWM_TIM, ENABLE);			//使能TIM2，定时器开始运行
@@ -49,8 +48,8 @@ void PWm_Init(void)
   * 注意事项：CCR和ARR共同决定占空比，此函数仅设置CCR的值，并不直接是占空比
   *           占空比Duty = CCR / (ARR + 1)
   */
-void PWM_SetCompare2(uint16_t Compare)
+void PWM_SetCompare3(uint16_t Compare)
 {
-	TIM_SetCompare2(PWM_TIM, Compare);		//设置CCR2的值
+	TIM_SetCompare3(PWM_TIM, Compare);		//设置CCR2的值
 }
 

@@ -87,6 +87,7 @@
 ".\objects\applocation_ui.o"
 ".\objects\taskmanage.o"
 ".\objects\application_timencoder.o"
+".\objects\mg90s_servo.o"
 --strict --scatter ".\Objects\freertosPratice.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

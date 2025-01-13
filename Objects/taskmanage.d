@@ -3,7 +3,7 @@
 .\objects\taskmanage.o: .\Application\F103VE\inc\Applocation_UI.h
 .\objects\taskmanage.o: .\Start\stm32f10x.h
 .\objects\taskmanage.o: .\Start\core_cm3.h
-.\objects\taskmanage.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\taskmanage.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\taskmanage.o: .\Start\system_stm32f10x.h
 .\objects\taskmanage.o: .\User\stm32f10x_conf.h
 .\objects\taskmanage.o: .\Library\inc\stm32f10x_adc.h
@@ -31,7 +31,7 @@
 .\objects\taskmanage.o: .\Library\inc\stm32f10x_wwdg.h
 .\objects\taskmanage.o: .\Library\inc\misc.h
 .\objects\taskmanage.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\taskmanage.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\taskmanage.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\taskmanage.o: .\User\FreeRTOSConfig.h
 .\objects\taskmanage.o: .\FreeRTOS\include\projdefs.h
 .\objects\taskmanage.o: .\FreeRTOS\include\portable.h
@@ -43,5 +43,5 @@
 .\objects\taskmanage.o: .\Application\F103VE\inc\Application_TIMEncoder.h
 .\objects\taskmanage.o: .\Hardware\TIMEncoder.h
 .\objects\taskmanage.o: .\System\SystemTime.h
-.\objects\taskmanage.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\taskmanage.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\taskmanage.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\taskmanage.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdlib.h

@@ -1,10 +1,10 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-28 10:04:40
- * @LastEditTime: 2024-12-31 16:56:58
- * @LastEditors: ZJP
+ * @LastEditTime: 2025-01-13 20:40:16
+ * @LastEditors: your name
  * @Description: ui显示函数
- * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
+ * @FilePath: \F103FreeRTOSTEST\Application\F103VE\src\Applocation_UI.c
  * 
  */
 #include "I2C.h"
@@ -14,7 +14,7 @@
 #include "TIMEncoder.h"
 #include "Application_TIMEncoder.h"
 #include "Applocation_UI.h"
-
+#include "MG90S_Servo.h"
 u8g2_t u8g2;
 
 // 当前菜单指针和当前选中项指针
@@ -218,8 +218,8 @@ void u8g2Init(u8g2_t *u8g2)
 
 void UI_Display(void)
 {
-  handleButtonPress();
-  drawMenu();
+
+
 }
 /**
  * @description: UI初始化

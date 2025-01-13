@@ -4,6 +4,7 @@
 #include "I2C.h"
 #include "TIMEncoder.h"
 #include "Applocation_UI.h"
+#include "MG90S_Servo.h"
 
 void vSystemHardwareDriverInit(void);
 

@@ -5,7 +5,7 @@
 
 #define TIMEncoder_GPIO_PORT_A    	GPIOA			              /* GPIO端口 */
 #define TIMEncoder_GPIO_CLK_A 	    RCC_APB2Periph_GPIOA		/* GPIO端口时钟 */
-#define TIMEncoder_GPIO_PIN_A		    GPIO_Pin_6			        /* 连接到编码器A相的GPIO */
+#define TIMEncoder_GPIO_PIN_A		 GPIO_Pin_6			        /* 连接到编码器A相的GPIO */
 
 #define TIMEncoder_GPIO_PORT_B    	GPIOB			              /* GPIO端口 */
 #define TIMEncoder_GPIO_CLK_B 	    RCC_APB2Periph_GPIOA		/* GPIO端口时钟 */

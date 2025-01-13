@@ -1052,6 +1052,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Application_Servo</GroupName>
+          <Files>
+            <File>
+              <FileName>MG90S_Servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Application\F103VE\src\MG90S_Servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>MG90S_Servo.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Application\F103VE\inc\MG90S_Servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
