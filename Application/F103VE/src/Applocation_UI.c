@@ -1,10 +1,10 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-28 10:04:40
- * @LastEditTime: 2025-01-13 20:40:16
- * @LastEditors: your name
+ * @LastEditTime: 2025-02-05 16:56:03
+ * @LastEditors: ZJP
  * @Description: ui显示函数
- * @FilePath: \F103FreeRTOSTEST\Application\F103VE\src\Applocation_UI.c
+ * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
  * 
  */
 #include "I2C.h"
@@ -15,147 +15,115 @@
 #include "Application_TIMEncoder.h"
 #include "Applocation_UI.h"
 #include "MG90S_Servo.h"
+#include <stdlib.h>
+#include <stdio.h>
 u8g2_t u8g2;
-
-// 当前菜单指针和当前选中项指针
-MenuItem* currentMenu = NULL;
-MenuItem* currentSelected = NULL;
-
-//外部查看选择的那个函数
-static u16 eMenu = 0;
-
-/**
- * @description: 返回当前菜单选择项
- * @return {*}
- */
-u16 checkMenu(void)
-{
-	return eMenu;
+// 全局变量
+MenuItem* current = NULL;   // 当前选中的菜单项
+uint8_t edit_mode = 0;      // 参数编辑模式标志
+// 示例回调函数
+void set_brightness(int value) {
+    // 这里实现实际的亮度设置代码
+    // 例如：HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+    //       __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, value);
+    Servo_SetAngle(value);
 }
-/**
- * @description: 菜单初始化函数
- * @return {*}
- */
-MenuItem* createMenuItem(const char* label, int isLeaf) {
+// 创建新菜单项
+MenuItem* create_menu_item(const char* name, MenuItem* parent, void (*action)(int)) {
     MenuItem* item = (MenuItem*)malloc(sizeof(MenuItem));
-    strcpy(item->label, label);
-    item->parent = NULL;
-    item->subItems = NULL;
-    item->next = NULL;
+    strncpy(item->name, name, sizeof(item->name));
+    item->value = 0;
+    item->parent = parent;
     item->prev = NULL;
-    item->isLeaf = isLeaf;
+    item->next = NULL;
+    item->child = NULL;
+    item->action = action;
     return item;
 }
-/**
- * @description: 添加子菜单函数
- * @return {*}
- */
-void addSubItem(MenuItem* parent, MenuItem* subItem) {
-    subItem->parent = parent;
-    if (parent->subItems == NULL) {
-        parent->subItems = subItem;
+void menu_init() {
+    // 创建主菜单
+    MenuItem* main_menu = create_menu_item("Main Menu", NULL, NULL);
+    
+    // 创建子菜单项
+    MenuItem* time_set = create_menu_item("Set Time", main_menu, NULL);
+    MenuItem* date_set = create_menu_item("Set Date", main_menu, NULL);
+    MenuItem* brightness = create_menu_item("Brightness", main_menu, NULL);
+    
+    // 链接主菜单项
+    main_menu->child = time_set;
+    time_set->next = date_set;
+    date_set->prev = time_set;
+    date_set->next = brightness;
+    brightness->prev = date_set;
+    
+    // 创建亮度子菜单
+    brightness->child = create_menu_item("Level", brightness, set_brightness);
+    brightness->child->value = 50;  // 默认亮度值
+    
+    current = main_menu;  // 初始化当前菜单
+}
+// 处理按键输入
+void handle_input(uint8_t key) {
+
+    if(edit_mode) {
+        // 参数编辑模式
+        switch(key) {
+            case 'L': current->value--; break;
+            case 'R': current->value++; break;
+            case 'E': 
+                edit_mode = 0;
+                if(current->action) current->action(current->value);
+                current = current->parent;
+                break;
+        }
     } else {
-        MenuItem* current = parent->subItems;
-        while (current->next!= NULL) {
-            current = current->next;
+        // 菜单导航模式
+        switch(key) {
+            case 'L': if(current->prev) current = current->prev; break;
+            case 'R': if(current->next) current = current->next; break;
+            case 'E': 
+                if(current->child) {
+                    current = current->child;
+                } else if(current->parent) {
+                    edit_mode = 1;
+                }
+                break;
         }
-        current->next = subItem;
-        subItem->prev = current;
     }
 }
-/**
- * @description: 菜单绘制函数
- * @return {*}
- */
-void drawMenu(void) {
-    u8g2_ClearBuffer(&u8g2);
-    u8g2_SetFont(&u8g2, u8g2_font_ncenB08_tr);
-
-    MenuItem* item = currentMenu->subItems;
-    int y = 10;
-    while (item!= NULL) {
-        if (item == currentSelected) {
-            u8g2_SetDrawColor(&u8g2, 2);
-        } else {
-            u8g2_SetDrawColor(&u8g2, 1);
-        }
-        u8g2_DrawStr(&u8g2, 10, y, item->label);
-        item = item->next;
-        y += 10;
-    }
-
-    u8g2_SendBuffer(&u8g2);
-}
-/**
- * @description: 按键处理函数
- * @return {*}
- */
-void handleButtonPress(void) {
-    if (eTIMEncoderExternState() == TIMEncoderTurnLeft) {    //左转，向左移动
-
-            if (currentSelected->prev!= NULL) {
-                currentSelected = currentSelected->prev;
-            }
+// 显示菜单
+void draw_menu(u8g2_t* u8g2) {
+    u8g2_ClearBuffer(u8g2);
+    
+    if(edit_mode) {
+        // 显示参数编辑界面
+        u8g2_SetFont(u8g2, u8g2_font_ncenB14_tr);
+        u8g2_DrawStr(u8g2, 10, 30, current->name);
+        char val_str[16];
+        sprintf(val_str, "%d", current->value);
+        u8g2_DrawStr(u8g2, 90, 30, val_str);
+    } else {
+        // 显示常规菜单
+        u8g2_SetFont(u8g2, u8g2_font_helvB10_tr);
+        MenuItem* p = current->parent ? current->parent->child : current;
         
-    }
-
-    if (eTIMEncoderExternState() == TIMEncoderTurnRight) {   //右转，向右移动
-
-            if (currentSelected->next!= NULL) {
-                currentSelected = currentSelected->next;
-			}
-            
-    }
-
-    if (eTIMEncoderExternState() == TIMEncoderSingleDown) {  //按下选择键   
-
-            if (currentSelected->isLeaf) {
-                   eMenu = currentSelected->isLeaf;
-            } else {
-                currentMenu = currentSelected;
-                currentSelected = currentMenu->subItems;
+        // 显示同级菜单项
+        uint8_t y = 12;
+        while(p) {
+            if(p == current) {
+                u8g2_DrawBox(u8g2, 0, y-10, 128, 12);
+                u8g2_SetDrawColor(u8g2, 0);
             }
-    }
-
-    if (eTIMEncoderExternState() == TIMEncoderDoubleDown) {  //双击返回上一级菜单
-
-            if (currentMenu->parent!= NULL) {
-                currentMenu = currentMenu->parent;
-                MenuItem* temp = currentMenu->subItems;
-				eMenu = currentSelected->isLeaf;
-                while (temp!= NULL && temp!= currentSelected) {
-                    temp = temp->next;
-                }
-                if (temp == NULL) {
-                    currentSelected = currentMenu->subItems;
-                }
+            u8g2_DrawStr(u8g2, 5, y, p->name);
+            if(p == current) {
+                u8g2_SetDrawColor(u8g2, 1);
+            }
+            y += 13;
+            p = p->next;
         }
     }
-}
-/**
- * @description: 菜单初始化函数
- * @return {*}
- */
-void Menu_Init(void)
-{
-	// 创建菜单
-    MenuItem* root = createMenuItem("Main Menu", 0);
-    MenuItem* subMenu1 = createMenuItem("Sub - Menu 1", 0);
-    MenuItem* subMenu2 = createMenuItem("Sub - Menu 2", 0);
-    MenuItem* leaf1 = createMenuItem("Leaf 1", 1);
-    MenuItem* leaf2 = createMenuItem("Leaf 2", 1);
-    MenuItem* leaf3 = createMenuItem("Leaf 3", 1);
-	MenuItem* leaf4 = createMenuItem("Leaf 4", 1);
-
-    addSubItem(root, subMenu1);
-    addSubItem(root, subMenu2);
-    addSubItem(subMenu1, leaf1);
-    addSubItem(subMenu1, leaf2);
-    addSubItem(subMenu2, leaf3);
-	addSubItem(subMenu2, leaf4);
-
-    currentMenu = root;
-    currentSelected = root->subItems;
+    
+    u8g2_SendBuffer(u8g2);
 }
 /**
  * @description: u8g2的I2C传输函数
@@ -218,8 +186,7 @@ void u8g2Init(u8g2_t *u8g2)
 
 void UI_Display(void)
 {
-
-
+  draw_menu(&u8g2);
 }
 /**
  * @description: UI初始化
@@ -227,6 +194,8 @@ void UI_Display(void)
  */
 void OLED_UI_Init(void)
 {
-	Menu_Init();
+    menu_init();
 	u8g2Init(&u8g2);
 }
+
+

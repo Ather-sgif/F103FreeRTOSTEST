@@ -1,7 +1,7 @@
 .\objects\croutine.o: FreeRTOS\src\croutine.c
 .\objects\croutine.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\croutine.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\croutine.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\croutine.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\croutine.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\croutine.o: .\User\FreeRTOSConfig.h
 .\objects\croutine.o: .\Start\stm32f10x.h
 .\objects\croutine.o: .\Start\core_cm3.h

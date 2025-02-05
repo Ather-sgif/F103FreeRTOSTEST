@@ -4,7 +4,7 @@
 .\objects\hardwaremanage.o: Hardware\TIMEncoder.h
 .\objects\hardwaremanage.o: .\Start\stm32f10x.h
 .\objects\hardwaremanage.o: .\Start\core_cm3.h
-.\objects\hardwaremanage.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\hardwaremanage.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\hardwaremanage.o: .\Start\system_stm32f10x.h
 .\objects\hardwaremanage.o: .\User\stm32f10x_conf.h
 .\objects\hardwaremanage.o: .\Library\inc\stm32f10x_adc.h
@@ -32,3 +32,4 @@
 .\objects\hardwaremanage.o: .\Library\inc\stm32f10x_wwdg.h
 .\objects\hardwaremanage.o: .\Library\inc\misc.h
 .\objects\hardwaremanage.o: .\Application\F103VE\inc\Applocation_UI.h
+.\objects\hardwaremanage.o: .\Application\F103VE\inc\MG90S_Servo.h

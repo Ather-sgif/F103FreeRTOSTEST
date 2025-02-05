@@ -1,7 +1,8 @@
 .\objects\pwm.o: Hardware\PWM.c
+.\objects\pwm.o: Hardware\PWM.h
 .\objects\pwm.o: .\Start\stm32f10x.h
 .\objects\pwm.o: .\Start\core_cm3.h
-.\objects\pwm.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\pwm.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\pwm.o: .\Start\system_stm32f10x.h
 .\objects\pwm.o: .\User\stm32f10x_conf.h
 .\objects\pwm.o: .\Library\inc\stm32f10x_adc.h
@@ -28,4 +29,3 @@
 .\objects\pwm.o: .\Library\inc\stm32f10x_usart.h
 .\objects\pwm.o: .\Library\inc\stm32f10x_wwdg.h
 .\objects\pwm.o: .\Library\inc\misc.h
-.\objects\pwm.o: Hardware\PWM.h

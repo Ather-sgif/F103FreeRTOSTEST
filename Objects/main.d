@@ -1,7 +1,7 @@
 .\objects\main.o: User\main.c
 .\objects\main.o: .\Start\stm32f10x.h
 .\objects\main.o: .\Start\core_cm3.h
-.\objects\main.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: .\Start\system_stm32f10x.h
 .\objects\main.o: .\User\stm32f10x_conf.h
 .\objects\main.o: .\Library\inc\stm32f10x_adc.h
@@ -29,7 +29,7 @@
 .\objects\main.o: .\Library\inc\stm32f10x_wwdg.h
 .\objects\main.o: .\Library\inc\misc.h
 .\objects\main.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\main.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\main.o: .\User\FreeRTOSConfig.h
 .\objects\main.o: .\FreeRTOS\include\projdefs.h
 .\objects\main.o: .\FreeRTOS\include\portable.h
@@ -42,8 +42,9 @@
 .\objects\main.o: .\Hardware\I2C.h
 .\objects\main.o: .\Hardware\TIMEncoder.h
 .\objects\main.o: .\Application\F103VE\inc\Applocation_UI.h
+.\objects\main.o: .\Application\F103VE\inc\MG90S_Servo.h
 .\objects\main.o: .\Application\F103VE\inc\TaskManage.h
 .\objects\main.o: .\Application\F103VE\inc\Application_TIMEncoder.h
 .\objects\main.o: .\System\SystemTime.h
-.\objects\main.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\main.o: F:\keil c51\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\main.o: D:\keil5\core\ARM\ARMCC\Bin\..\include\stdlib.h
