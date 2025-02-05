@@ -1,10 +1,10 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-28 10:04:40
- * @LastEditTime: 2025-02-05 16:56:03
- * @LastEditors: ZJP
+ * @LastEditTime: 2025-02-05 20:44:19
+ * @LastEditors: your name
  * @Description: ui显示函数
- * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
+ * @FilePath: \F103FreeRTOSTEST\Application\F103VE\src\Applocation_UI.c
  * 
  */
 #include "I2C.h"
@@ -184,17 +184,33 @@ void u8g2Init(u8g2_t *u8g2)
 	u8g2_ClearBuffer(u8g2);
 }
 
+/**
+ * @description: UI显示
+ * @return {*}
+ */
 void UI_Display(void)
 {
+  if(eTIMEncoderExternState() == TIMEncoderTurnRight)
+  {
+    handle_input('R');
+  }
+  else if(eTIMEncoderExternState() == TIMEncoderTurnLeft)
+  {
+    handle_input('L'); 
+  }
+  else if(eTIMEncoderExternState() == TIMEncoderSingleDown)
+  {
+    handle_input('E');
+  }
   draw_menu(&u8g2);
-}
+ }
 /**
  * @description: UI初始化
  * @return {*}
  */
 void OLED_UI_Init(void)
 {
-    menu_init();
+     menu_init();
 	u8g2Init(&u8g2);
 }
 
