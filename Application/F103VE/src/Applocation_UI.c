@@ -1,7 +1,7 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-28 10:04:40
- * @LastEditTime: 2025-02-06 16:47:25
+ * @LastEditTime: 2025-02-06 16:48:36
  * @LastEditors: ZJP
  * @Description: ui显示函数
  * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
@@ -21,7 +21,7 @@ u8g2_t u8g2;
 // 全局变量
 MenuItem* current = NULL;   // 当前选中的菜单项
 uint8_t edit_mode = 0;      // 参数编辑模式标志
-int value_translate []= 0;  // 设置的参数显示到其它页面上
+int value_translate []= {0};  // 设置的参数显示到其它页面上
 /**
  * @description: 在界面显示文本参数
  * @param {u8g2_t*} u8g2
