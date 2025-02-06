@@ -1,10 +1,10 @@
 /*
  * @Author: ZJP
  * @Date: 2024-12-28 10:04:40
- * @LastEditTime: 2025-02-05 20:44:19
- * @LastEditors: your name
+ * @LastEditTime: 2025-02-06 16:47:25
+ * @LastEditors: ZJP
  * @Description: ui显示函数
- * @FilePath: \F103FreeRTOSTEST\Application\F103VE\src\Applocation_UI.c
+ * @FilePath: \stm32f103VE-free\Application\F103VE\src\Applocation_UI.c
  * 
  */
 #include "I2C.h"
@@ -21,6 +21,32 @@ u8g2_t u8g2;
 // 全局变量
 MenuItem* current = NULL;   // 当前选中的菜单项
 uint8_t edit_mode = 0;      // 参数编辑模式标志
+int value_translate []= 0;  // 设置的参数显示到其它页面上
+/**
+ * @description: 在界面显示文本参数
+ * @param {u8g2_t*} u8g2
+ * @param {MenuItem*} p
+ * @return {*}
+ */
+void current_show_text(u8g2_t* u8g2, MenuItem* p){
+
+    if(p->name == "Main Menu"){
+     u8g2_DrawStr(u8g2, 10, 15, "Angle:");
+     u8g2_DrawStr(u8g2, 10, 25, "Angle:");
+    }
+    else if (p->name == "Set Time")
+    {
+        
+    }
+    else if (p->name == "Set Date")
+    {
+        
+    }
+}
+void value_translate_write(int i,MenuItem* p)
+{
+    value_translate[i] = p->value;
+}
 // 示例回调函数
 void set_brightness(int value) {
     // 这里实现实际的亮度设置代码
@@ -59,7 +85,9 @@ void menu_init() {
     // 创建亮度子菜单
     brightness->child = create_menu_item("Level", brightness, set_brightness);
     brightness->child->value = 50;  // 默认亮度值
+    value_translate_write(0,brightness->child);
     
+
     current = main_menu;  // 初始化当前菜单
 }
 // 处理按键输入
@@ -106,7 +134,6 @@ void draw_menu(u8g2_t* u8g2) {
         // 显示常规菜单
         u8g2_SetFont(u8g2, u8g2_font_helvB10_tr);
         MenuItem* p = current->parent ? current->parent->child : current;
-        
         // 显示同级菜单项
         uint8_t y = 12;
         while(p) {
